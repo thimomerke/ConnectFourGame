@@ -8,7 +8,7 @@ class Board:
                 print(self.board[i][j], end=" ")
             print()
     def play(self, player, column):
-        if column > 7 or column < 0:
+        if column > 6 or column < 0:
             return False
         for i in range(0, 6):
             if self.board[i][column] == "e":
@@ -59,7 +59,7 @@ while True:
         print(player1.name + ", please enter your column:")
         column = int(input())-1
         if board.play(player1, column):
-            print(board.print_board())
+            board.print_board()
             player1turn = False
         else:
             print("Invalid column")
@@ -67,7 +67,7 @@ while True:
         print(player2.name + ", please enter your column:")
         column = int(input())-1
         if board.play(player2, column):
-            print(board.print_board())
+            board.print_board()
             player1turn = True
         else:
             print("Invalid column")
@@ -75,4 +75,3 @@ while True:
     if end:
         print("The winner is " + winner)
         break
-        
